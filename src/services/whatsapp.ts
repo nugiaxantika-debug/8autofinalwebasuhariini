@@ -75,6 +75,7 @@ private karyawanData = {
   private autoTypingEnabled: boolean = false;
   private botMode: "self" | "publik" = "publik";
   private menuLink: string | null = "jadibotbatakvip.biz.id";
+  private scriptInfo: string | null = null;
   private groupSettings = new Map<string, { welcomeEnabled?: boolean, welcomeMessage?: string, goodbyeEnabled?: boolean, goodbyeMessage?: string, antivideo?: boolean, antifoto?: boolean, antidocument?: boolean, antijudol?: boolean, antifoto1x?: boolean, antistiker?: boolean, antispam?: boolean, antitagsw?: boolean, antivirtex?: boolean, antitoxic?: boolean, antilinkall?: boolean, warns?: Record<string, number>, storeList?: Record<string, string>, setProses?: string, setDone?: string }>();
   
   private connectedAt: number | null = null;
@@ -135,6 +136,7 @@ private karyawanData = {
       if (obj.botMode !== undefined && (obj.botMode === "self" || obj.botMode === "publik")) this.botMode = obj.botMode;
       if (obj.menuLink !== undefined) this.menuLink = obj.menuLink;
       if (obj.autoVoiceNote !== undefined) this.autoVoiceNote = obj.autoVoiceNote;
+      if (obj.scriptInfo !== undefined) this.scriptInfo = obj.scriptInfo;
       if (obj.ownerNumbers !== undefined && Array.isArray(obj.ownerNumbers)) {
         this.ownerNumbers = new Set(obj.ownerNumbers.map((n: string) => this.normalizeJid(n)));
       }
@@ -166,6 +168,7 @@ private karyawanData = {
       botMode: this.botMode,
       menuLink: this.menuLink,
       autoVoiceNote: this.autoVoiceNote,
+      scriptInfo: this.scriptInfo,
       ownerNumbers: Array.from(this.ownerNumbers),
       premiumNumbers: Array.from(this.premiumNumbers),
       registeredUsers: Object.fromEntries(this.registeredUsers)
@@ -2317,7 +2320,7 @@ private loadKaryawanData() {
     }
     
     const requestedCmd = body.split(/[\s\n]+/)[0];
-    const ownerCommands = ['.swgcv2', 'swgcv2', '.statusgrupv2', 'statusgrupv2', '.swgcv2all', 'swgcv2all', '.statusgrupv2all', 'statusgrupv2all', '.createsaluran', 'createsaluran', '.buatsaluran', 'buatsaluran', '.upchannel', 'upchannel', '.upsaluran', 'upsaluran', '.postsaluran', 'postsaluran', '.postchannel', 'postchannel', '.addtextnama', 'addtextnama', '.deltextnama', 'deltextnama', '.addwalinkcha', 'addwalinkcha', '.delwalinkcha', 'delwalinkcha', '.listwalinkcha', 'listwalinkcha', '.cekwalinkcha', 'cekwalinkcha', '.ownermenu', 'ownermenu', '.antibot', 'antibot', '.autoread', 'autoread', '.savekontak', 'savekontak', '.broadcast', 'broadcast', '.restartbot', 'restartbot', '.addpremium', 'addpremium', '.addprem', 'addprem', '.addowner', 'addowner', '.delowner', 'delowner', '.listowner', 'listowner', '.listpremium', 'listpremium', '.delpremium', 'delpremium', '.setbotpp', 'setbotpp', '.setbotname', 'setbotname', '.addnamabot', 'addnamabot', '.delnamabot', 'delnamabot', '.totalfitur', 'totalfitur', '.addprefix', 'addprefix', '.delprefix', 'delprefix', '.listprefix', 'listprefix', '.addpoweredby', 'addpoweredby', '.delpoweredby', 'delpoweredby', '.listpoweredby', 'listpoweredby', '.linkset', 'linkset', '.dellinkset', 'dellinkset', '.addcmd', 'addcmd', '.delcmd', 'delcmd', '.listcmd', 'listcmd', '.self', 'self', '.publik', 'publik', '.public', 'public', '.mode', 'mode', '.botmode', 'botmode', '.setcoverbot', 'setcoverbot', '.delcoverbot', 'delcoverbot', '.setcovervideo', 'setcovervideo', '.delsetcovervideo', 'delsetcovervideo', '.delcovervideo', 'delcovervideo', '.anticall', 'anticall', '.autotyping', 'autotyping', '.addsewa', 'addsewa', '.delsewa', 'delsewa', '.listsewa', 'listsewa', '.joingc', 'joingc', '.creategc', 'creategc', '.addsticker', 'addsticker', '.delsticker', 'delsticker', '.addlimit', 'addlimit', '.dellimit', 'dellimit', '.listlimit', 'listlimit', '.autoblockprivate', 'autoblockprivate', '.delautoblockprivate', 'delautoblockprivate'];
+    const ownerCommands = ['.addscript', 'addscript', '.delscript', 'delscript', '.setscript', 'setscript', '.swgcv2', 'swgcv2', '.statusgrupv2', 'statusgrupv2', '.swgcv2all', 'swgcv2all', '.statusgrupv2all', 'statusgrupv2all', '.createsaluran', 'createsaluran', '.buatsaluran', 'buatsaluran', '.upchannel', 'upchannel', '.upsaluran', 'upsaluran', '.postsaluran', 'postsaluran', '.postchannel', 'postchannel', '.addtextnama', 'addtextnama', '.deltextnama', 'deltextnama', '.addwalinkcha', 'addwalinkcha', '.delwalinkcha', 'delwalinkcha', '.listwalinkcha', 'listwalinkcha', '.cekwalinkcha', 'cekwalinkcha', '.ownermenu', 'ownermenu', '.antibot', 'antibot', '.autoread', 'autoread', '.savekontak', 'savekontak', '.broadcast', 'broadcast', '.restartbot', 'restartbot', '.addpremium', 'addpremium', '.addprem', 'addprem', '.addowner', 'addowner', '.delowner', 'delowner', '.listowner', 'listowner', '.listpremium', 'listpremium', '.delpremium', 'delpremium', '.setbotpp', 'setbotpp', '.setbotname', 'setbotname', '.addnamabot', 'addnamabot', '.delnamabot', 'delnamabot', '.totalfitur', 'totalfitur', '.addprefix', 'addprefix', '.delprefix', 'delprefix', '.listprefix', 'listprefix', '.addpoweredby', 'addpoweredby', '.delpoweredby', 'delpoweredby', '.listpoweredby', 'listpoweredby', '.linkset', 'linkset', '.dellinkset', 'dellinkset', '.addcmd', 'addcmd', '.delcmd', 'delcmd', '.listcmd', 'listcmd', '.self', 'self', '.publik', 'publik', '.public', 'public', '.mode', 'mode', '.botmode', 'botmode', '.setcoverbot', 'setcoverbot', '.delcoverbot', 'delcoverbot', '.setcovervideo', 'setcovervideo', '.delsetcovervideo', 'delsetcovervideo', '.delcovervideo', 'delcovervideo', '.anticall', 'anticall', '.autotyping', 'autotyping', '.addsewa', 'addsewa', '.delsewa', 'delsewa', '.listsewa', 'listsewa', '.joingc', 'joingc', '.creategc', 'creategc', '.addsticker', 'addsticker', '.delsticker', 'delsticker', '.addlimit', 'addlimit', '.dellimit', 'dellimit', '.listlimit', 'listlimit', '.autoblockprivate', 'autoblockprivate', '.delautoblockprivate', 'delautoblockprivate'];
     const groupCommands = ['.antijudol', 'antijudol', '.antidocument', 'antidocument', '.antidokumen', 'antidokumen', '.afk', 'afk', '.joinch', 'joinch', '.cekidgc', 'cekidgc', '.infouser', 'infouser', '.tagadmin', 'tagadmin', '.infogrup', 'infogrup', '.leaderboard', 'leaderboard', '.totalchat', 'totalchat', '.groupmenu', 'groupmenu', '.delete', 'delete', '.hidetag', 'hidetag', '.kick', 'kick', '.add', 'add', '.open', 'open', '.close', 'close', '.open2', 'open2', '.close2', 'close2', '.antilinkall', 'antilinkall', '.linkgc', 'linkgc', '.setppgc', 'setppgc', '.delppgc', 'delppgc', '.setwelcome', 'setwelcome', '.setbye', 'setbye', '.welcome', 'welcome', '.goodbye', 'goodbye', '.antitagsw', 'antitagsw', '.antivideo', 'antivideo', '.antifoto', 'antifoto', '.antifoto1x', 'antifoto1x', '.antistiker', 'antistiker', '.antispam', 'antispam', '.setnamegc', 'setnamegc', '.setdescgc', 'setdescgc', '.culikswgc', 'culikswgc', '.culikprofilegc', 'culikprofilegc', '.kickall', 'kickall', '.sewabot', 'sewabot', '.promote', 'promote', '.demote', 'demote', '.werewolf', 'werewolf', '.joinww', 'joinww', '.startww', 'startww', '.mutegc', 'mutegc', '.resetlink', 'resetlink', '.tagall', 'tagall', '.setbotbio', 'setbotbio', '.delbotbio', 'delbotbio', '.antivirtex', 'antivirtex', '.antitoxic', 'antitoxic', '.menfess', 'menfess', '.confess', 'confess', '.balasmenfess', 'balasmenfess', '.tolakmenfess', 'tolakmenfess', '.stopmenfess', 'stopmenfess', '.warn', 'warn', '.listwarn', 'listwarn', '.delwarn', 'delwarn', '.infowarn', 'infowarn'];
     const funCommands = ['.ceksifat', 'ceksifat', '.cekkenakalan', 'cekkenakalan', '.cekperawan', 'cekperawan', '.cekperjaka', 'cekperjaka', '.cekjanda', 'cekjanda', '.cekduda', 'cekduda', '.bego', 'bego', '.rate', 'rate', '.top', 'top', '.funmenu', 'funmenu', '.cekkhodam', 'cekkhodam', '.cekganteng', 'cekganteng', '.cekcantik', 'cekcantik', '.cekjodoh', 'cekjodoh', '.ceklesby', 'ceklesby', '.cekpasangan', 'cekpasangan', '.cekgay', 'cekgay', '.cekhoby', 'cekhoby', '.cekkesetiaan', 'cekkesetiaan', '.jadian', 'jadian', '.kiss', 'kiss', '.quotes', 'quotes', '.avatar', 'avatar', '.ppcouple', 'ppcouple', '.infonegara', 'infonegara', '.cekwibu', 'cekwibu', '.meme', 'meme', '.waifu', 'waifu', '.ceksange', 'ceksange', '.cekkaya', 'cekkaya', '.cekbucin', 'cekbucin', '.artinama', 'artinama', '.cekmasadepan', 'cekmasadepan', '.faktadunia', 'faktadunia', '.cekgempa', 'cekgempa', '.cekcuaca', 'cekcuaca'];
     const margaCommands = ['.margamenu', 'margamenu', '.cekpariban', 'cekpariban', '.cektartulang', 'cektartulang', '.cektarito', 'cektarito', '.cekpadan', 'cekpadan'];
@@ -2336,7 +2339,7 @@ private loadKaryawanData() {
     const hentaiCommands = ['.hentaimenu', 'hentaimenu', '.hentai', 'hentai', '.nsfw', 'nsfw', '.nsfwahegao', 'nsfwahegao', '.nsfwass', 'nsfwass', '.nsfwbdsm', 'nsfwbdsm', '.nsfwgangbang', 'nsfwgangbang', '.nsfwgay', 'nsfwgay', '.nsfwloli', 'nsfwloli', '.nsfwneko', 'nsfwneko', '.nsfwpussy', 'nsfwpussy', '.nsfwzettai', 'nsfwzettai'];
     const hantuCommands = ['.hantumenu', 'hantumenu', '.fotpocong', 'fotpocong', '.fotkuntilanak', 'fotkuntilanak', '.fotgenderuwo', 'fotgenderuwo', '.fotwewegombel', 'fotwewegombel', '.fottuyul', 'fottuyul', '.fotsundelbolong', 'fotsundelbolong', '.fotpalasik', 'fotpalasik', '.fotkuyang', 'fotkuyang', '.fotbanaspati', 'fotbanaspati', '.fotjelangkung', 'fotjelangkung', '.fotsiluman', 'fotsiluman', '.fotnyirorokidul', 'fotnyirorokidul', '.fotgundulpringis', 'fotgundulpringis'];
     const coganCommands = ['.coganmenu', 'coganmenu', '.coganiqbaal', 'coganiqbaal', '.coganjefrinichol', 'coganjefrinichol', '.coganangga', 'coganangga', '.coganverrell', 'coganverrell', '.coganrizky', 'coganrizky', '.coganjepang', 'coganjepang', '.cogankorea', 'cogankorea', '.coganthailand', 'coganthailand', '.coganchina', 'coganchina', '.cogandenji', 'cogandenji', '.cogangojo', 'cogangojo', '.coganlevi', 'coganlevi', '.coganluffy', 'coganluffy', '.cogansasuke', 'cogansasuke', '.cogannaruto', 'cogannaruto', '.cogankakashi', 'cogankakashi'];
-    const toolsCommands = ['.toolsmenu', 'toolsmenu', '.listjadibot', 'listjadibot', '.barcode', 'barcode', '.qrcode', 'qrcode', '.dnslookup', 'dnslookup', '.whois', 'whois', '.httpheader', 'httpheader', '.shortlink', 'shortlink', '.myip', 'myip', '.ipinfo', 'ipinfo', '.hostcheck', 'hostcheck', '.countdown', 'countdown', '.iplookup', 'iplookup', '.subdomain', 'subdomain'];
+    const toolsCommands = ['.toolsmenu', 'toolsmenu', '.sc', 'sc', '.script', 'script', '.sourcecode', 'sourcecode', '.listjadibot', 'listjadibot', '.barcode', 'barcode', '.qrcode', 'qrcode', '.dnslookup', 'dnslookup', '.whois', 'whois', '.httpheader', 'httpheader', '.shortlink', 'shortlink', '.myip', 'myip', '.ipinfo', 'ipinfo', '.hostcheck', 'hostcheck', '.countdown', 'countdown', '.iplookup', 'iplookup', '.subdomain', 'subdomain'];
     const deviceCommands = ['.devicemenu', 'devicemenu', '.battery', 'battery', '.deviceinfo', 'deviceinfo', '.cpuinfo', 'cpuinfo', '.raminfo', 'raminfo', '.storage', 'storage', '.network', 'network', '.pingphone', 'pingphone', '.sensor', 'sensor', '.apkinfo', 'apkinfo', '.appcheck', 'appcheck'];
     const posterCommands = ['.postermenu', 'postermenu', '.pengabdisetan', 'pengabdisetan', '.kkndidesapenari', 'kkndidesapenari', '.sewudino', 'sewudino', '.impetigore', 'impetigore', '.rumahdara', 'rumahdara', '.qodrat', 'qodrat', '.kuntilanak', 'kuntilanak', '.jelangkung', 'jelangkung', '.keramat', 'keramat', '.suzzanna', 'suzzanna', '.mangkujiwo', 'mangkujiwo', '.losmenmelati', 'losmenmelati'];
     const sulapCommands = ['.sulapmenu', 'sulapmenu', '.kartusulap', 'kartusulap', '.tongkatsulap', 'tongkatsulap', '.topisulap', 'topisulap', '.koinsulap', 'koinsulap', '.thumbtip', 'thumbtip', '.cangkirdanbola', 'cangkirdanbola', '.linkingrings', 'linkingrings', '.spongeballs', 'spongeballs', '.silkscarf', 'silkscarf', '.appearingcane', 'appearingcane', '.vanishingcane', 'vanishingcane', '.changebag', 'changebag', '.dovepan', 'dovepan', '.floatingtable', 'floatingtable', '.levitationdevice', 'levitationdevice', '.kotakpedang', 'kotakpedang', '.guillotinesulap', 'guillotinesulap', '.zigzagbox', 'zigzagbox', '.kotaktembus', 'kotaktembus', '.firewallet', 'firewallet'];
@@ -2804,6 +2807,7 @@ Perintah ini hanya bisa digunakan oleh Owner!` }, { quoted: msg });
 │ .swgcv2all - broadcast status grup V2 ke SEMUA grup
 │ .createsaluran - buat saluran/channel WhatsApp baru
 │ .upchannel - otomatis post teks/media/dokumen/link ke saluran
+│ .addscript / .delscript - atur teks/link script bot
 │ .autoblockprivate
 │ .delautoblockprivate
 │ .broadcast
@@ -4794,6 +4798,26 @@ Contoh: .delowner 628xxx` }, { quoted: msg });
         this.broadcastState(`Changed menu link to ${text}`);
         await this.sock.sendMessage(jid, { text: `✅ Berhasil mengubah link menu: ${text}` }, { quoted: msg });
       }
+    } else if (body.startsWith(".addscript") || body.startsWith("addscript") || body.startsWith(".setscript") || body.startsWith("setscript")) {
+      if (!isOwner) return await this.sock.sendMessage(jid, { text: `👑 *Akses Ditolak*\nPerintah ini hanya bisa digunakan oleh Owner!` }, { quoted: msg });
+      const args = messageContent.replace(/^(\.addscript|addscript|\.setscript|setscript)\s*/i, "").trim();
+      if (!args) {
+        return await this.sock.sendMessage(jid, { 
+          text: `❌ *Masukkan teks atau link script!*\n\nContoh penggunaan:\n*.addscript https://github.com/example/whatsapp-bot*\natau\n*.addscript Script Bot WhatsApp VIP: https://example.com*` 
+        }, { quoted: msg });
+      }
+      this.scriptInfo = args;
+      this.saveBotSettings();
+      this.broadcastState(`Changed script info: ${args}`);
+      await this.sock.sendMessage(jid, { 
+        text: `✅ *Berhasil Menyimpan Script Bot!*\n\n📝 *Teks/Link Script:*\n${args}\n\n_User sekarang dapat memanggil teks/link ini dengan mengetik *.sc* di toolsmenu._` 
+      }, { quoted: msg });
+    } else if (body === ".delscript" || body === "delscript") {
+      if (!isOwner) return await this.sock.sendMessage(jid, { text: `👑 *Akses Ditolak*\nPerintah ini hanya bisa digunakan oleh Owner!` }, { quoted: msg });
+      this.scriptInfo = null;
+      this.saveBotSettings();
+      this.broadcastState(`Deleted script info`);
+      await this.sock.sendMessage(jid, { text: `✅ *Berhasil menghapus script bot!*` }, { quoted: msg });
     } else if (body === ".dellinkset" || body === "dellinkset") {
       this.menuLink = null;
       this.saveBotSettings();
@@ -8451,9 +8475,18 @@ Link referensi: ${randomItem.link}` }, { quoted: msg });
         let argsStr = messageContent.slice(messageContent.toLowerCase().indexOf(cmd) + cmd.length).trim();
         
         if (cmd === "toolsmenu") {
-            const toolsText = `🛠️ *Tools Menu*\n\n│ .listjadibot - daftar email & nomor bot di web dashboard\n│ .barcode\n│ .qrcode\n│ .dnslookup\n│ .whois\n\n│ .httpheader\n│ .shortlink\n│ .myip\n│ .ipinfo\n│ .hostcheck\n│ .countdown\n│ .iplookup\n│ .subdomain`;
+            const toolsText = `🛠️ *Tools Menu*\n\n│ .sc - info script / link source code bot\n│ .listjadibot - daftar email & nomor bot di web dashboard\n│ .barcode\n│ .qrcode\n│ .dnslookup\n│ .whois\n\n│ .httpheader\n│ .shortlink\n│ .myip\n│ .ipinfo\n│ .hostcheck\n│ .countdown\n│ .iplookup\n│ .subdomain`;
             await this.sock.sendMessage(jid, { text: toolsText, contextInfo: this.getMenuContextInfo() }, { quoted: this.getFakeMenuQuote(senderJid, msg.pushName || "User") });
             this.broadcastState(`Responded to toolsmenu command`);
+            return;
+        }
+
+        if (cmd === "sc" || cmd === "script" || cmd === "sourcecode") {
+            const scText = this.scriptInfo
+                ? `📦 *SOURCE CODE & SCRIPT BOT*\n\n${this.scriptInfo}\n\n_Powered by ${this.textNama || "JADIBOT BATAK VIP"}_`
+                : `📦 *SOURCE CODE & SCRIPT BOT*\n\n_Script belum diatur oleh Owner bot._\n_Owner dapat mengaturnya dengan mengetik: *.addscript <teks/link>*_`;
+            await this.sock.sendMessage(jid, { text: scText, contextInfo: this.getMenuContextInfo() }, { quoted: this.getFakeMenuQuote(senderJid, msg.pushName || "User") });
+            this.broadcastState(`Responded to ${cmd} command`);
             return;
         }
 
