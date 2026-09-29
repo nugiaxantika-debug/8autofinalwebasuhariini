@@ -2320,15 +2320,15 @@ private loadKaryawanData() {
     }
     
     const requestedCmd = body.split(/[\s\n]+/)[0];
-    const ownerCommands = ['.addscript', 'addscript', '.delscript', 'delscript', '.setscript', 'setscript', '.swgcv2', 'swgcv2', '.statusgrupv2', 'statusgrupv2', '.swgcv2all', 'swgcv2all', '.statusgrupv2all', 'statusgrupv2all', '.createsaluran', 'createsaluran', '.buatsaluran', 'buatsaluran', '.upchannel', 'upchannel', '.upsaluran', 'upsaluran', '.postsaluran', 'postsaluran', '.postchannel', 'postchannel', '.addtextnama', 'addtextnama', '.deltextnama', 'deltextnama', '.addwalinkcha', 'addwalinkcha', '.delwalinkcha', 'delwalinkcha', '.listwalinkcha', 'listwalinkcha', '.cekwalinkcha', 'cekwalinkcha', '.ownermenu', 'ownermenu', '.antibot', 'antibot', '.autoread', 'autoread', '.savekontak', 'savekontak', '.broadcast', 'broadcast', '.restartbot', 'restartbot', '.addpremium', 'addpremium', '.addprem', 'addprem', '.addowner', 'addowner', '.delowner', 'delowner', '.listowner', 'listowner', '.listpremium', 'listpremium', '.delpremium', 'delpremium', '.setbotpp', 'setbotpp', '.setbotname', 'setbotname', '.addnamabot', 'addnamabot', '.delnamabot', 'delnamabot', '.totalfitur', 'totalfitur', '.addprefix', 'addprefix', '.delprefix', 'delprefix', '.listprefix', 'listprefix', '.addpoweredby', 'addpoweredby', '.delpoweredby', 'delpoweredby', '.listpoweredby', 'listpoweredby', '.linkset', 'linkset', '.dellinkset', 'dellinkset', '.addcmd', 'addcmd', '.delcmd', 'delcmd', '.listcmd', 'listcmd', '.self', 'self', '.publik', 'publik', '.public', 'public', '.mode', 'mode', '.botmode', 'botmode', '.setcoverbot', 'setcoverbot', '.delcoverbot', 'delcoverbot', '.setcovervideo', 'setcovervideo', '.delsetcovervideo', 'delsetcovervideo', '.delcovervideo', 'delcovervideo', '.anticall', 'anticall', '.autotyping', 'autotyping', '.addsewa', 'addsewa', '.delsewa', 'delsewa', '.listsewa', 'listsewa', '.joingc', 'joingc', '.creategc', 'creategc', '.addsticker', 'addsticker', '.delsticker', 'delsticker', '.addlimit', 'addlimit', '.dellimit', 'dellimit', '.listlimit', 'listlimit', '.autoblockprivate', 'autoblockprivate', '.delautoblockprivate', 'delautoblockprivate'];
+    const ownerCommands = ['.cekidcha', 'cekidcha', '.cekchannel', 'cekchannel', '.idchannel', 'idchannel', '.addscript', 'addscript', '.delscript', 'delscript', '.setscript', 'setscript', '.swgcv2', 'swgcv2', '.statusgrupv2', 'statusgrupv2', '.swgcv2all', 'swgcv2all', '.statusgrupv2all', 'statusgrupv2all', '.createsaluran', 'createsaluran', '.buatsaluran', 'buatsaluran', '.upchannel', 'upchannel', '.upsaluran', 'upsaluran', '.postsaluran', 'postsaluran', '.postchannel', 'postchannel', '.addtextnama', 'addtextnama', '.deltextnama', 'deltextnama', '.addwalinkcha', 'addwalinkcha', '.delwalinkcha', 'delwalinkcha', '.listwalinkcha', 'listwalinkcha', '.cekwalinkcha', 'cekwalinkcha', '.ownermenu', 'ownermenu', '.antibot', 'antibot', '.autoread', 'autoread', '.savekontak', 'savekontak', '.broadcast', 'broadcast', '.restartbot', 'restartbot', '.addpremium', 'addpremium', '.addprem', 'addprem', '.addowner', 'addowner', '.delowner', 'delowner', '.listowner', 'listowner', '.listpremium', 'listpremium', '.delpremium', 'delpremium', '.setbotpp', 'setbotpp', '.setbotname', 'setbotname', '.addnamabot', 'addnamabot', '.delnamabot', 'delnamabot', '.totalfitur', 'totalfitur', '.addprefix', 'addprefix', '.delprefix', 'delprefix', '.listprefix', 'listprefix', '.addpoweredby', 'addpoweredby', '.delpoweredby', 'delpoweredby', '.listpoweredby', 'listpoweredby', '.linkset', 'linkset', '.dellinkset', 'dellinkset', '.addcmd', 'addcmd', '.delcmd', 'delcmd', '.listcmd', 'listcmd', '.self', 'self', '.publik', 'publik', '.public', 'public', '.mode', 'mode', '.botmode', 'botmode', '.setcoverbot', 'setcoverbot', '.delcoverbot', 'delcoverbot', '.setcovervideo', 'setcovervideo', '.delsetcovervideo', 'delsetcovervideo', '.delcovervideo', 'delcovervideo', '.anticall', 'anticall', '.autotyping', 'autotyping', '.addsewa', 'addsewa', '.delsewa', 'delsewa', '.listsewa', 'listsewa', '.joingc', 'joingc', '.creategc', 'creategc', '.addsticker', 'addsticker', '.delsticker', 'delsticker', '.addlimit', 'addlimit', '.dellimit', 'dellimit', '.listlimit', 'listlimit', '.autoblockprivate', 'autoblockprivate', '.delautoblockprivate', 'delautoblockprivate'];
     const groupCommands = ['.antijudol', 'antijudol', '.antidocument', 'antidocument', '.antidokumen', 'antidokumen', '.afk', 'afk', '.joinch', 'joinch', '.cekidgc', 'cekidgc', '.infouser', 'infouser', '.tagadmin', 'tagadmin', '.infogrup', 'infogrup', '.leaderboard', 'leaderboard', '.totalchat', 'totalchat', '.groupmenu', 'groupmenu', '.delete', 'delete', '.hidetag', 'hidetag', '.kick', 'kick', '.add', 'add', '.open', 'open', '.close', 'close', '.open2', 'open2', '.close2', 'close2', '.antilinkall', 'antilinkall', '.linkgc', 'linkgc', '.setppgc', 'setppgc', '.delppgc', 'delppgc', '.setwelcome', 'setwelcome', '.setbye', 'setbye', '.welcome', 'welcome', '.goodbye', 'goodbye', '.antitagsw', 'antitagsw', '.antivideo', 'antivideo', '.antifoto', 'antifoto', '.antifoto1x', 'antifoto1x', '.antistiker', 'antistiker', '.antispam', 'antispam', '.setnamegc', 'setnamegc', '.setdescgc', 'setdescgc', '.culikswgc', 'culikswgc', '.culikprofilegc', 'culikprofilegc', '.kickall', 'kickall', '.sewabot', 'sewabot', '.promote', 'promote', '.demote', 'demote', '.werewolf', 'werewolf', '.joinww', 'joinww', '.startww', 'startww', '.mutegc', 'mutegc', '.resetlink', 'resetlink', '.tagall', 'tagall', '.setbotbio', 'setbotbio', '.delbotbio', 'delbotbio', '.antivirtex', 'antivirtex', '.antitoxic', 'antitoxic', '.menfess', 'menfess', '.confess', 'confess', '.balasmenfess', 'balasmenfess', '.tolakmenfess', 'tolakmenfess', '.stopmenfess', 'stopmenfess', '.warn', 'warn', '.listwarn', 'listwarn', '.delwarn', 'delwarn', '.infowarn', 'infowarn'];
     const funCommands = ['.ceksifat', 'ceksifat', '.cekkenakalan', 'cekkenakalan', '.cekperawan', 'cekperawan', '.cekperjaka', 'cekperjaka', '.cekjanda', 'cekjanda', '.cekduda', 'cekduda', '.bego', 'bego', '.rate', 'rate', '.top', 'top', '.funmenu', 'funmenu', '.cekkhodam', 'cekkhodam', '.cekganteng', 'cekganteng', '.cekcantik', 'cekcantik', '.cekjodoh', 'cekjodoh', '.ceklesby', 'ceklesby', '.cekpasangan', 'cekpasangan', '.cekgay', 'cekgay', '.cekhoby', 'cekhoby', '.cekkesetiaan', 'cekkesetiaan', '.jadian', 'jadian', '.kiss', 'kiss', '.quotes', 'quotes', '.avatar', 'avatar', '.ppcouple', 'ppcouple', '.infonegara', 'infonegara', '.cekwibu', 'cekwibu', '.meme', 'meme', '.waifu', 'waifu', '.ceksange', 'ceksange', '.cekkaya', 'cekkaya', '.cekbucin', 'cekbucin', '.artinama', 'artinama', '.cekmasadepan', 'cekmasadepan', '.faktadunia', 'faktadunia', '.cekgempa', 'cekgempa', '.cekcuaca', 'cekcuaca'];
     const margaCommands = ['.margamenu', 'margamenu', '.cekpariban', 'cekpariban', '.cektartulang', 'cektartulang', '.cektarito', 'cektarito', '.cekpadan', 'cekpadan'];
     const videoCommands = ['.videomenu', 'videomenu', '.tiktokgirl', 'tiktokgirl', '.tiktoktobrut', 'tiktoktobrut', '.tiktokkayes', 'tiktokkayes', '.tiktokhot', 'tiktokhot', '.tiktokghea', 'tiktokghea', '.tiktokbocil', 'tiktokbocil', '.tiktoklesbi', 'tiktoklesbi', '.tiktokgay', 'tiktokgay', '.tiktokartis', 'tiktokartis', '.tiktokpacaran', 'tiktokpacaran', '.tiktokanjing', 'tiktokanjing', '.tiktokkucing', 'tiktokkucing', '.tiktokfreefire', 'tiktokfreefire', '.tiktokpubg', 'tiktokpubg', '.tiktoknikah', 'tiktoknikah', '.tiktokpointblank', 'tiktokpointblank'];
-    const stickerCommands = ['.stickermenu', 'stickermenu', '.stiker', 'stiker', '.hd', 'hd', '.brat', 'brat', '.bratvid', 'bratvid', '.smeme', 'smeme', '.qc', 'qc', '.toimg', 'toimg', '.togif', 'togif', '.stikerrandom', 'stikerrandom', '.stikerspongebob', 'stikerspongebob', '.tovideo', 'tovideo', '.rvo', 'rvo', '.hdvid', 'hdvid', '.emojimix', 'emojimix', '.emojigif', 'emojigif', '.bratgambar', 'bratgambar', '.attp', 'attp', '.logo', 'logo', '.wallpaper', 'wallpaper'];
+    const stickerCommands = ['.stickermenu', 'stickermenu', '.wm', 'wm', '.take', 'take', '.watermark', 'watermark', '.stiker', 'stiker', '.hd', 'hd', '.brat', 'brat', '.bratvid', 'bratvid', '.smeme', 'smeme', '.qc', 'qc', '.toimg', 'toimg', '.togif', 'togif', '.stikerrandom', 'stikerrandom', '.stikerspongebob', 'stikerspongebob', '.tovideo', 'tovideo', '.rvo', 'rvo', '.hdvid', 'hdvid', '.emojimix', 'emojimix', '.emojigif', 'emojigif', '.bratgambar', 'bratgambar', '.attp', 'attp', '.logo', 'logo', '.wallpaper', 'wallpaper'];
     const kristenCommands = ['.kristenmenu', 'kristenmenu', '.ayatalkitab', 'ayatalkitab', '.doaayat', 'doaayat', '.kisahyesus', 'kisahyesus', '.jadwalgereja', 'jadwalgereja', '.namakitab', 'namakitab'];
     const islamCommands = ['.islammenu', 'islammenu', '.ayatkursi', 'ayatkursi', '.tekssholat', 'tekssholat', '.hadits', 'hadits', '.jadwalsholat', 'jadwalsholat', '.kisahnabi', 'kisahnabi', '.niatsholat', 'niatsholat', '.quotesislami', 'quotesislami'];
-    const downloadCommands = ['.downloadmenu', 'downloadmenu', '.playspotify', 'playspotify', '.spotify', 'spotify', '.autovoicenote', 'autovoicenote', '.autovn', 'autovn', '.tiktok', 'tiktok', '.tiktokaudiomp3', 'tiktokaudiomp3', '.playyt', 'playyt', '.playytmp4', 'playytmp4', '.capcut', 'capcut', '.facebook', 'facebook', '.instagram', 'instagram', '.fotosexy', 'fotosexy', '.fotoanime', 'fotoanime', '.pinterest', 'pinterest', '.ttsaudio', 'ttsaudio', '.tiktokslide', 'tiktokslide', '.ssweb', 'ssweb', '.gdrive', 'gdrive', '.mediafire', 'mediafire', '.videosexybikini', 'videosexybikini', '.vidsexyjepang', 'vidsexyjepang', '.vidsexyindonesia', 'vidsexyindonesia', '.vidsexymalaysia', 'vidsexymalaysia', '.vidsexychina', 'vidsexychina'];
+    const downloadCommands = ['.downloadmenu', 'downloadmenu', '.terabox', 'terabox', '.teraboxdl', 'teraboxdl', '.playspotify', 'playspotify', '.spotify', 'spotify', '.autovoicenote', 'autovoicenote', '.autovn', 'autovn', '.tiktok', 'tiktok', '.tiktokaudiomp3', 'tiktokaudiomp3', '.playyt', 'playyt', '.playytmp4', 'playytmp4', '.capcut', 'capcut', '.facebook', 'facebook', '.instagram', 'instagram', '.fotosexy', 'fotosexy', '.fotoanime', 'fotoanime', '.pinterest', 'pinterest', '.ttsaudio', 'ttsaudio', '.tiktokslide', 'tiktokslide', '.ssweb', 'ssweb', '.gdrive', 'gdrive', '.mediafire', 'mediafire', '.videosexybikini', 'videosexybikini', '.vidsexyjepang', 'vidsexyjepang', '.vidsexyindonesia', 'vidsexyindonesia', '.vidsexymalaysia', 'vidsexymalaysia', '.vidsexychina', 'vidsexychina'];
     const cecanCommands = ['.cecanmenu', 'cecanmenu', '.cecanchina', 'cecanchina', '.cecanhijab', 'cecanhijab', '.cecanindonesia', 'cecanindonesia', '.cecanjapan', 'cecanjapan', '.cecanjeni', 'cecanjeni', '.cecanjiso', 'cecanjiso', '.cecankorea', 'cecankorea', '.cecanmalaysia', 'cecanmalaysia', '.cecanjustinaxie', 'cecanjustinaxie', '.cecanrose', 'cecanrose', '.cecanthailand', 'cecanthailand', '.cecanvietnam', 'cecanvietnam'];
     const primbonCommands = ['.primbonmenu', 'primbonmenu', '.pantun', 'pantun', '.ceksial', 'ceksial', '.ramalannasib', 'ramalannasib', '.ramalanjodoh', 'ramalanjodoh', '.ramalancinta', 'ramalancinta', '.ramalankeburukan', 'ramalankeburukan', '.zodiak', 'zodiak', '.isidompet', 'isidompet', '.profesiku', 'profesiku', '.nulis', 'nulis'];
     const animeCommands = ['.animemenu', 'animemenu', '.animeakira', 'animeakira', '.animeasuna', 'animeasuna', '.animeeba', 'animeeba', '.animeelaina', 'animeelaina', '.animeemilia', 'animeemilia', '.animegremory', 'animegremory', '.animehinata', 'animehinata', '.animehusbu', 'animehusbu', '.animeisuzu', 'animeisuzu', '.animeitori', 'animeitori', '.animekagura', 'animekagura', '.animekanna', 'animekanna', '.animemiku', 'animemiku', '.animenezuko', 'animenezuko', '.animeloli', 'animeloli', '.animepokemon', 'animepokemon', '.animerem', 'animerem', '.animeryuko', 'animeryuko', '.animeshina', 'animeshina', '.animeshinka', 'animeshinka', '.animeshota', 'animeshota', '.animetejina', 'animetejina', '.animetoukachan', 'animetoukachan'];
@@ -2683,6 +2683,7 @@ _Kirim atau balas/reply foto dengan perintah di atas. Jika tanpa foto, otomatis 
       const downloadText = `📥 *Download Menu*
 
 │ .playspotify - putar musik Spotify real-time dengan tampilan visual bergerak & audio
+│ .terabox - download video/file dari link terabox
 │ .autovoicenote - download/ubah audio/musik jadi Voice Note (Auto VN)
 │ .tiktok - download video dari link tiktok VT
 │ .tiktokaudiomp3 - download audio dari tiktok
@@ -2707,7 +2708,7 @@ _Kirim atau balas/reply foto dengan perintah di atas. Jika tanpa foto, otomatis 
       await this.sendMenuWithCover(jid, downloadText, this.getFakeMenuQuote(senderJid, msg.pushName || "User"));
       this.broadcastState(`Responded to downloadmenu command`);
     } else if (body === "stickermenu" || body === ".stickermenu" || body === "sticker menu" || body === ".sticker menu") {
-      const stickerText = `🎨 *Sticker Menu*\n\n│ .stiker - ubah gambar jadi stiker\n│ .hd - tingkatkan resolusi gambar\n│ .brat - buat stiker teks brat\n│ .bratvid - buat stiker teks video brat\n│ .smeme - buat stiker dengan teks|teks\n│ .qc - buat stiker text chat\n│ .toimg - stiker ke gambar\n│ .togif - gambar ke gif\n│ .tovideo - ubah stiker ke video
+      const stickerText = `🎨 *Sticker Menu*\n\n│ .stiker - ubah gambar jadi stiker\n│ .wm - ganti packname & author pada stiker\n│ .hd - tingkatkan resolusi gambar\n│ .brat - buat stiker teks brat\n│ .bratvid - buat stiker teks video brat\n│ .smeme - buat stiker dengan teks|teks\n│ .qc - buat stiker text chat\n│ .toimg - stiker ke gambar\n│ .togif - gambar ke gif\n│ .tovideo - ubah stiker ke video
 │ .tostiker - buat stiker dari video\n│ .rvo - read view once\n│ .hdvid - tingkatkan resolusi video\n│ .emojimix - gabungkan dua emoji\n│ .emojigif - buat emoji jadi gif\n│ .bratgambar - buat stiker brat dari gambar\n│ .attp - buat stiker teks animasi warna warni
 │ .logo - buat logo text
 │ .wallpaper - cari wallpaper keren`;
@@ -2806,6 +2807,7 @@ Perintah ini hanya bisa digunakan oleh Owner!` }, { quoted: msg });
 │ .swgcv2 - post story / status grup V2 ke profil grup
 │ .swgcv2all - broadcast status grup V2 ke SEMUA grup
 │ .createsaluran - buat saluran/channel WhatsApp baru
+│ .cekidcha - cek ID / JID channel WhatsApp
 │ .upchannel - otomatis post teks/media/dokumen/link ke saluran
 │ .addscript / .delscript - atur teks/link script bot
 │ .autoblockprivate
@@ -4073,6 +4075,51 @@ Pesan pribadi kembali diizinkan.` }, { quoted: msg });
         text: `📢 *Info Link Saluran (Channel) Aktif*\n\n• Nama Saluran: *${this.channelName || this.textNama || "JADIBOT BATAK VIP"}*\n• JID Saluran: \`${this.channelJid}\`\n\nUntuk menghapus, ketik *.delwalinkcha*` 
       }, { quoted: msg });
     } else if (
+      body.startsWith(".cekidcha") || body.startsWith("cekidcha") ||
+      body.startsWith(".cekchannel") || body.startsWith("cekchannel") ||
+      body.startsWith(".idchannel") || body.startsWith("idchannel")
+    ) {
+      if (!isOwner) return await this.sock.sendMessage(jid, { text: `👑 *Akses Ditolak*\nPerintah ini hanya bisa digunakan oleh Owner!` }, { quoted: msg });
+      const rawArg = messageContent.replace(/^(\.cekidcha|cekidcha|\.cekchannel|cekchannel|\.idchannel|idchannel)\s*/i, "").trim();
+      
+      let code = "";
+      if (rawArg.includes("whatsapp.com/channel/")) {
+        code = rawArg.split("whatsapp.com/channel/")[1].split("/")[0].split("?")[0].trim();
+      } else if (rawArg && !rawArg.includes(" ")) {
+        code = rawArg.replace(/^@/, "").trim();
+      }
+
+      if (code) {
+        try {
+          await this.sock.sendMessage(jid, { text: "⏳ *Sedang memeriksa metadata channel...*" }, { quoted: msg });
+          const meta = await this.sock.newsletterMetadata("invite", code);
+          if (meta && meta.id) {
+            const reply = `📢 *INFORMASI SALURAN WHATSAPP*\n\n` +
+              `• 📛 *Nama:* ${meta.name || "Tanpa Nama"}\n` +
+              `• 🆔 *JID / ID Channel:* \`${meta.id}\`\n` +
+              `• 👥 *Followers:* ${meta.subscribers || meta.thread_metadata?.subscribers_count || "0"}\n` +
+              `• 📝 *Deskripsi:* ${meta.description || "-"}\n` +
+              `• 🔗 *Link:* https://whatsapp.com/channel/${code}\n\n` +
+              `💡 _ID ini dapat digunakan untuk fitur bot seperti .upchannel atau .addwalinkcha_`;
+            await this.sock.sendMessage(jid, { text: reply, contextInfo: this.getMenuContextInfo() }, { quoted: msg });
+          } else {
+            await this.sock.sendMessage(jid, { text: `❌ *Gagal mendapatkan data channel.*\nPastikan link channel valid dan masih aktif.` }, { quoted: msg });
+          }
+        } catch (err: any) {
+          await this.sock.sendMessage(jid, { text: `❌ Gagal mengambil ID Channel: ${err?.message || err}` }, { quoted: msg });
+        }
+      } else if (this.channelJid) {
+        await this.sock.sendMessage(jid, { 
+          text: `📢 *INFORMASI SALURAN WHATSAPP AKTIF*\n\n• 📛 *Nama:* ${this.channelName || this.textNama || "Saluran Bot"}\n• 🆔 *JID / ID Channel:* \`${this.channelJid}\`\n\n_Untuk memeriksa channel lain:_\n*.cekidcha https://whatsapp.com/channel/xxx*`,
+          contextInfo: this.getMenuContextInfo()
+        }, { quoted: msg });
+      } else {
+        await this.sock.sendMessage(jid, { 
+          text: `❌ *Masukkan link channel WhatsApp!*\n\nContoh penggunaan:\n*.cekidcha https://whatsapp.com/channel/0029VacP3K6DOQITTN6O4Z2K*`,
+          contextInfo: this.getMenuContextInfo()
+        }, { quoted: msg });
+      }
+    } else if (
       body.startsWith(".upchannel") || body.startsWith("upchannel") ||
       body.startsWith(".upsaluran") || body.startsWith("upsaluran") ||
       body.startsWith(".postsaluran") || body.startsWith("postsaluran") ||
@@ -5315,6 +5362,148 @@ _Catatan: Dikirim sbg dokumen karena terjadi error konversi._` }, { quoted: msg 
               console.error("Mediafire error:", e);
               await this.sock.sendMessage(jid, { text: `❌ Gagal mendownload Mediafire.` }, { quoted: msg });
           }
+      }
+    } else if (body.startsWith(".terabox") || body.startsWith("terabox")) {
+      const urlMatches = messageContent.match(/(https?:\/\/[^\s]+)/g);
+      if (!urlMatches) {
+        return await this.sock.sendMessage(jid, { 
+          text: `❌ *Masukkan link Terabox!*\n\nContoh:\n*.terabox https://terabox.com/s/1xxxxxx*` 
+        }, { quoted: msg });
+      }
+      
+      const targetUrl = urlMatches[0];
+      await this.sock.sendMessage(jid, { text: "⏳ *Sedang mengambil data & video dari Terabox...*" }, { quoted: msg });
+
+      try {
+        let fileData: any = null;
+
+        // Try API 1: Siputzx Terabox API
+        try {
+          const api1 = await axios.get(`https://api.siputzx.my.id/api/d/terabox?url=${encodeURIComponent(targetUrl)}`, { timeout: 10000 });
+          if (api1.data && (api1.data.data || api1.data.result)) {
+            const resData = api1.data.data || api1.data.result;
+            const item = Array.isArray(resData) ? resData[0] : resData;
+            if (item && (item.downloadUrl || item.url || item.dlink || item.direct_link)) {
+              fileData = {
+                filename: item.filename || item.name || item.server_filename || 'terabox_video.mp4',
+                size: item.size || item.filesize || '',
+                downloadUrl: item.downloadUrl || item.url || item.dlink || item.direct_link,
+                thumb: item.thumb || item.thumbnail || ''
+              };
+            }
+          }
+        } catch (e) {}
+
+        // Try API 2: Agatz Terabox API
+        if (!fileData) {
+          try {
+            const api2 = await axios.get(`https://api.agatz.xyz/api/terabox?url=${encodeURIComponent(targetUrl)}`, { timeout: 10000 });
+            if (api2.data && api2.data.data) {
+              const resData = api2.data.data;
+              const item = Array.isArray(resData) ? resData[0] : resData;
+              if (item && (item.download || item.url || item.dlink)) {
+                fileData = {
+                  filename: item.filename || item.name || 'terabox_video.mp4',
+                  size: item.size || '',
+                  downloadUrl: item.download || item.url || item.dlink,
+                  thumb: item.thumbnail || ''
+                };
+              }
+            }
+          } catch (e) {}
+        }
+
+        // Try API 3: Flame Terabox Downloader
+        if (!fileData) {
+          try {
+            const api3 = await axios.get(`https://terabox-downloader.flame.workers.dev/?url=${encodeURIComponent(targetUrl)}`, { timeout: 10000 });
+            if (api3.data && (api3.data.downloadUrl || api3.data.dlink || api3.data.url)) {
+              fileData = {
+                filename: api3.data.fileName || api3.data.filename || 'terabox_video.mp4',
+                size: api3.data.fileSize || api3.data.size || '',
+                downloadUrl: api3.data.downloadUrl || api3.data.dlink || api3.data.url,
+                thumb: api3.data.thumb || ''
+              };
+            }
+          } catch (e) {}
+        }
+
+        // Try API 4: Official Terabox share list API extraction
+        if (!fileData) {
+          try {
+            let shortKey = "";
+            const sMatch = targetUrl.match(/\/s\/([a-zA-Z0-9_-]+)/);
+            if (sMatch) {
+              shortKey = sMatch[1];
+            } else {
+              const surlMatch = targetUrl.match(/surl=([a-zA-Z0-9_-]+)/);
+              if (surlMatch) shortKey = surlMatch[1];
+            }
+            if (shortKey) {
+              const cleanKey = shortKey.startsWith("1") ? shortKey.substring(1) : shortKey;
+              const directApi = `https://www.terabox.app/share/list?app_id=250528&shorturl=${cleanKey}&root=1`;
+              const tbRes = await axios.get(directApi, { 
+                headers: {
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                  'Referer': 'https://www.terabox.app/'
+                },
+                timeout: 10000 
+              });
+              if (tbRes.data && tbRes.data.list && tbRes.data.list.length > 0) {
+                const item = tbRes.data.list[0];
+                fileData = {
+                  filename: item.server_filename || 'terabox_video.mp4',
+                  size: item.size ? `${(item.size / (1024 * 1024)).toFixed(2)} MB` : '',
+                  downloadUrl: item.dlink || item.direct_link || targetUrl,
+                  thumb: item.thumbs?.url3 || item.thumbs?.url2 || ''
+                };
+              }
+            }
+          } catch (e) {}
+        }
+
+        if (!fileData || !fileData.downloadUrl) {
+          return await this.sock.sendMessage(jid, { 
+            text: `❌ *Gagal mengambil data dari Terabox.*\n\nPastikan link Terabox masih aktif dan bersifat publik.\nLink: ${targetUrl}` 
+          }, { quoted: msg });
+        }
+
+        const caption = `📦 *TERABOX DOWNLOADER*\n\n` +
+          `• 📁 *Nama File:* ${fileData.filename}\n` +
+          (fileData.size ? `• 📊 *Ukuran:* ${fileData.size}\n` : '') +
+          `• 🔗 *Link Download:* ${fileData.downloadUrl}\n\n` +
+          `_Sedang mengirim file/video..._`;
+
+        await this.sock.sendMessage(jid, { text: caption }, { quoted: msg });
+
+        // Attempt sending as video / document
+        const isVideo = fileData.filename.match(/\.(mp4|mkv|mov|avi|webm)$/i) || fileData.downloadUrl.includes("video");
+        try {
+          if (isVideo) {
+            await this.sock.sendMessage(jid, { 
+              video: { url: fileData.downloadUrl }, 
+              caption: `✅ *Terabox Video:*\n${fileData.filename}` 
+            }, { quoted: msg });
+          } else {
+            await this.sock.sendMessage(jid, { 
+              document: { url: fileData.downloadUrl }, 
+              fileName: fileData.filename,
+              mimetype: 'application/octet-stream',
+              caption: `✅ *Terabox File:*\n${fileData.filename}` 
+            }, { quoted: msg });
+          }
+        } catch (mediaErr: any) {
+          // If direct sending via WhatsApp fails due to file size > 100MB or streaming header
+          await this.sock.sendMessage(jid, { 
+            text: `⚠️ *File berukuran besar atau streaming terbatas*\n\nSilakan unduh langsung menggunakan tautan berikut:\n📥 ${fileData.downloadUrl}` 
+          }, { quoted: msg });
+        }
+
+      } catch (err: any) {
+        console.error("Terabox download error:", err);
+        await this.sock.sendMessage(jid, { 
+          text: `❌ Terjadi kesalahan saat mendownload Terabox: ${err?.message || err}` 
+        }, { quoted: msg });
       }
     } else if (body.startsWith(".tiktok ") || body === ".tiktok" || body.startsWith("tiktok ") || body === "tiktok") {
       const urlMatches = messageContent.match(/(https?:\/\/[^\s]+)/g);
@@ -7562,6 +7751,118 @@ Link referensi: ${randomItem.link}` }, { quoted: msg });
         }
       } else {
         await this.sock.sendMessage(jid, { text: `Kirim atau balas gambar/video dengan caption ${body.split(" ")[0]} untuk menggunakan fitur ${type}.` }, { quoted: msg });
+      }
+    } else if (
+      body.startsWith(".wm") || body.startsWith("wm") ||
+      body.startsWith(".take") || body.startsWith("take") ||
+      body.startsWith(".watermark") || body.startsWith("watermark")
+    ) {
+      const rawArgs = messageContent.replace(/^(\.wm|wm|\.take|take|\.watermark|watermark)\s*/i, "").trim();
+      let packName = this.textNama || "JADIBOT BATAK VIP";
+      let authorName = msg.pushName || "Bot WhatsApp";
+      if (rawArgs.includes("|")) {
+        const parts = rawArgs.split("|");
+        packName = parts[0].trim() || packName;
+        authorName = parts.slice(1).join("|").trim() || authorName;
+      } else if (rawArgs) {
+        packName = rawArgs;
+      }
+
+      const isQuotedSticker = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage?.stickerMessage;
+      const isQuotedImage = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage?.imageMessage;
+      const isQuotedVideo = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage?.videoMessage;
+      const isSticker = msg.message?.stickerMessage;
+      const isImage = msg.message?.imageMessage;
+      const isVideo = msg.message?.videoMessage;
+
+      const mediaMessage = isQuotedSticker
+        ? { message: { stickerMessage: isQuotedSticker } }
+        : isQuotedImage
+          ? { message: { imageMessage: isQuotedImage } }
+          : isQuotedVideo
+            ? { message: { videoMessage: isQuotedVideo } }
+            : isSticker
+              ? msg
+              : isImage
+                ? msg
+                : isVideo
+                  ? msg
+                  : null;
+
+      if (!mediaMessage) {
+        return await this.sock.sendMessage(jid, { 
+          text: `❌ *Reply stiker atau gambar dengan .wm <packname>|<author>*\n\nContoh penggunaan:\n*.wm Stiker Saya | Batak VIP*\natau cukup *.wm* sambil reply stiker.` 
+        }, { quoted: msg });
+      }
+
+      try {
+        await this.sock.sendMessage(jid, { text: "⏳ *Sedang mengubah watermark stiker...*" }, { quoted: msg });
+        const buffer = await downloadMediaMessage(
+          mediaMessage as any,
+          'buffer',
+          {},
+          { logger: pino({ level: 'silent' }) as any, reuploadRequest: this.sock.updateMediaMessage }
+        ) as Buffer;
+
+        const isAnimated = !!(isQuotedVideo || isVideo || (isQuotedSticker && isQuotedSticker.isAnimated));
+        
+        if (isAnimated) {
+          const tempInput = path.join(os.tmpdir(), `wm_${Date.now()}.webp`);
+          const tempOutput = path.join(os.tmpdir(), `wm_out_${Date.now()}.webp`);
+          fs.writeFileSync(tempInput, buffer);
+          
+          execFileSync(ffmpegPath, [
+            '-y',
+            '-i', tempInput,
+            '-vcodec', 'libwebp',
+            '-vf', "scale='min(512,iw)':min'(512,ih)':force_original_aspect_ratio=decrease,fps=12,pad=512:512:-1:-1:color=white@0.0,format=rgba",
+            '-lossless', '0',
+            '-compression_level', '6',
+            '-q:v', '50',
+            '-loop', '0',
+            '-preset', 'picture',
+            '-an',
+            '-vsync', '0',
+            tempOutput
+          ]);
+
+          const stickerBuffer = fs.readFileSync(tempOutput);
+          let finalStickerBuffer = stickerBuffer;
+          try {
+            const webpmux = (await import('node-webpmux')).default;
+            const img = new webpmux.Image();
+            await img.load(stickerBuffer);
+            const exif = Buffer.from(JSON.stringify({
+              "sticker-pack-id": "1",
+              "sticker-pack-name": packName,
+              "sticker-pack-publisher": authorName,
+              "emojis": ["✨"]
+            }), 'utf8');
+            const exifBuf = Buffer.concat([
+              Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]),
+              exif
+            ]);
+            exifBuf.writeUInt32LE(exif.length, 14);
+            img.exif = exifBuf;
+            finalStickerBuffer = await img.save(null);
+          } catch (e) {}
+
+          await this.sock.sendMessage(jid, { sticker: finalStickerBuffer }, { quoted: msg });
+          try { fs.unlinkSync(tempInput); fs.unlinkSync(tempOutput); } catch (e) {}
+        } else {
+          const { Sticker, StickerTypes } = await import('wa-sticker-formatter');
+          const sticker = new Sticker(buffer, {
+            pack: packName,
+            author: authorName,
+            type: StickerTypes.FULL,
+            quality: 80
+          });
+          const stickerBuffer = await sticker.toBuffer();
+          await this.sock.sendMessage(jid, { sticker: stickerBuffer }, { quoted: msg });
+        }
+      } catch (err: any) {
+        console.error("WM Sticker Error:", err);
+        await this.sock.sendMessage(jid, { text: `❌ Gagal mengubah watermark stiker: ${err?.message || err}` }, { quoted: msg });
       }
     } else if (body.startsWith(".culikswgc") || body.startsWith("culikswgc")) {
       if (body.includes("on")) {
